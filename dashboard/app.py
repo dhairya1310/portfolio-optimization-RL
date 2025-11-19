@@ -84,11 +84,17 @@ def simulate_model(model):
     obs, _ = env.reset()
     done = False
     portfolio_values = [env.portfolio_value]
+    
     while not done:
+        # ✅ FIX: reshape observation for compatibility
+        if obs.ndim == 1:
+            obs = obs.reshape(1, -1)
         action, _ = model.predict(obs, deterministic=True)
         obs, reward, done, _, info = env.step(action)
         portfolio_values.append(info["portfolio_value"])
+    
     return pd.Series(portfolio_values)
+
 
 # --------------------------
 # Single Model Mode
