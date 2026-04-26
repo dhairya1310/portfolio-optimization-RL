@@ -55,6 +55,7 @@ Combines log-portfolio-return, a turnover penalty (transaction cost = 0.1% per u
 
 ## Project Structure
 
+```
 portfolio-optimization-RL/
 ├── data_prepared/      # train.csv, val.csv, test.csv — generated from stock_data.csv
 ├── models/             # Trained model checkpoints (DQN, A2C, PPO)
@@ -62,7 +63,7 @@ portfolio-optimization-RL/
 ├── train_rl.py         # Trains DQN, A2C, PPO (uses GPU if available)
 ├── app.py              # Streamlit dashboard for EDA + RL evaluation
 └── requirements.txt    # Python dependencies
-
+```
 ## Tech Stack
 
 Python · PyTorch · Stable-Baselines3 · Gymnasium · pandas · NumPy · Streamlit · Plotly
